@@ -1,0 +1,201 @@
+//
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu{
+	.border-radius(@borderRadiusSmall);
+	.box-shadow(0 2px 6px rgba(0,0,0,.1));
+
+	// Links within the dropdown menu
+	li > a {
+		padding: 5px 10px;
+		color: @dropdownLinkColor;
+	}
+	&.dropdownArrowTop {
+			&:before,&:after {
+		    	position: absolute;
+			    content: '';
+			    display: inline-block;
+			}
+			&:before {
+		    border-left:   9px solid transparent;
+		    border-right:  9px solid transparent;
+		    border-bottom: 9px solid @dropdownBorder;
+		    top: -9px;
+		    left: 29px;
+		  }
+		  &:after {
+		    border-left:   8px solid transparent;
+		    border-right:  8px solid transparent;
+		    border-bottom: 8px solid @dropdownBackground;
+		    top: -8px;
+		    left: 30px;
+		  }
+	}
+}
+
+.uiDropdownWithIcon{
+	.dropdown-menu {
+	  li > a {
+		padding: 5px 20px 5px 10px;
+		i{
+			margin-right: 9px;
+		}
+	  }
+	}
+	> .dropdown-menu {
+		.border-radius(@borderRadiusSmall);
+	}
+
+}
+// Hover state
+// -----------
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover,
+.dropdown-submenu:hover > a ,
+.uiDropdownMenu  li > a.active{
+  #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+}
+.uiDropdownMenu  li > a.active {
+	color: @dropdownLinkColorHover;
+}
+.dropdown-menu .divider {
+	margin: 5px 0 4px;
+    border: none;
+    background: @dropdownDividerTop;
+}
+
+#ThemeDropDown {
+	.dropdown-menu {
+    min-width: 200px;
+  }
+}
+
+#ThemeDropDown .btn.dropdown-toggle > span:first-child {
+	width: 150px;
+	display: inline-block;
+	text-align: left;
+}
+
+.dropdown-menu{
+	> li {
+        list-style-type: none!important;
+		.block-item {
+			cursor: pointer;
+			display: block;
+			padding: 5px 10px;
+			&.even {
+		    	background-color: @primaryBackground;
+		    }
+		    .text-link {
+		    	color: @linkColor;
+		    }
+		    &:hover {
+				#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));
+				color: @dropdownLinkColorHover;
+				* {
+					color: @dropdownLinkColorHover;
+				}
+			}
+		}
+        .actionIcon {
+            text-align: left;
+        }
+        &.back-item {
+        	a:hover {
+        		.uiIconArrowLeft {
+
+        		}
+        	}
+        }
+	}
+}
+
+
+// The dropdown menu (ul)
+// ----------------------
+.uiDropDownCal,.uiDropdownMenu {
+	 li > a {
+		display: block;
+		 clear: both;
+		 font-weight: normal;
+		 line-height: @baseLineHeight;
+		 color: @dropdownLinkColor;
+		 white-space: nowrap;
+		 padding: 6px 19px;
+	 }	 	
+}
+.dropdown-menu.uiDropdownWithIcon {
+	
+	// Arrows
+	.arrowLeft,
+	.arrowLeft:after{
+	  position: absolute;
+	  display: inline-block;
+	  width: 0;
+	  height: 0;
+	  border-color: transparent;
+	  border-style: solid;
+	}
+	.arrowLeft:after{
+	  content: "";
+	  z-index: -1;
+	}
+	.arrowLeft{
+		top: 50%; 
+		left: -9px;
+		margin-top: -@popoverArrowWidth; 
+		border-width: 9px  9px 9px 0;
+		border-right-color: @dropdownBackground;
+		&:after {
+		  border-width: 10px 10px 10px 0;
+		  border-right-color: @dropdownBorder;
+		  bottom: -10px;
+		  left: -1px;
+		}
+	}
+}
+//uiDropDownCal state hover and active
+.uiDropDownCal li > a:hover,
+.uiDropDownCal li > a:focus,
+.uiDropDownCal .active > a,
+.uiDropDownCal .active > a:hover,
+.dropdown-submenu:hover > a,
+.uiDropdownMenu li > a:hover,
+.uiDropdownMenu li > a:focus,
+.uiDropdownMenu .active > a,
+.uiDropdownMenu .active > a:hover {
+		text-decoration: none;
+  	    color: @dropdownLinkColorHover;
+  		#gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 15%));	 	
+}
+
+
+.uiDropdownWithIcon{
+	.uiDropDownCal, .uiDropdownMenu {
+	  li > a {
+		padding: 6px 19px;
+		i{
+			margin-right: 5px;
+		}
+	  }
+	}
+
+}
+
+.dropdown-submenu {
+	> a:after {
+		content: "\e75c";
+		border: none;
+		.font-icon;
+		font-size:  @sizeIcon12x12 - 1;
+		margin-right: -5px;
+		color: @colorIconDefault;
+	}
+	&:hover {
+		> a:after {
+			color: @colorIconSecondary;
+		}	
+	} 
+}

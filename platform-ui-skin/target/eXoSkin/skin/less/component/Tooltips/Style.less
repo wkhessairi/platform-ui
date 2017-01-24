@@ -1,0 +1,30 @@
+//
+// Tooltip
+// --------------------------------------------------
+.tooltip {
+	font-size: @baseFontSize - 1 !important;
+	text-shadow: none!important;
+	font-weight: normal!important;
+	&.in{
+		.opacity(80);
+	}
+	&.left{
+		margin-left: -13px;
+	}
+}
+
+.tooltip-inner {
+	word-wrap: break-word;
+    white-space: normal;
+	.border-radius(@borderRadiusSmall - 1);
+	line-height: @baseLineHeight - 4;
+	text-align: left;
+	padding: 8px 10px;
+}
+
+@media(max-width: 1024px){
+    .tooltip {
+        opacity: 0!important;
+        display: none!important;
+    }
+}

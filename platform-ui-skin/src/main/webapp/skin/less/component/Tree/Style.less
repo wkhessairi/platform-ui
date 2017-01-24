@@ -1,0 +1,168 @@
+//
+// Tree
+// --------------------------------------------------
+
+/*---------- uiTreeExplorer ----------*/
+.uiTreeExplorer {
+	overflow: auto;
+	margin: 0 0 10px 0;
+	.node {
+		line-height: 19px;
+		margin-left: 15px;
+		padding-top: 7px;
+		white-space: nowrap;
+
+		a {
+			display: inline;
+			color: @textColor;
+			cursor: pointer;
+			line-height: 22px;
+			vertical-align: middle;
+            [class*="Mini"] {
+                top: -1px
+            }
+			&:hover {
+				text-decoration: none;
+				color: @linkColor;
+			}
+		}
+
+	}
+
+	.SelectedNode a, .nodeSelected a {
+		font-weight: bold;
+		color: @baseColorDark;
+	}
+
+	.treeNodeType {
+		padding-left: 22px;
+	}
+    .expandIcon,.collapseIcon,.emptyIcon{
+        padding-left: 15px;
+        position: relative;
+        &:before {
+            .font-icon();
+            position: absolute;
+            top: 6px;
+            left:0;
+            font-size: 9px;
+        }
+    }
+	.expandIcon {
+		.square(auto);
+		display: block;
+		margin: 0px;
+        &:before {
+            content: "\e745";//uiIconColorMiniSquarePlus
+        }
+	}
+
+	.collapseIcon {
+        &:before {
+            content: "\e744";//uiIconColorMiniSquareMinus
+        }
+	}
+
+	.emptyIcon {
+        &:before {
+            content: "\e743";// uiIconColorMiniSquareBlank
+        }
+	}
+	.loadingTree {
+		text-align: center;
+		padding: 5px;
+	}
+	.uiLoadingIconMini {
+		padding-right: 5px;
+		line-height: 16px;
+	}
+
+}
+
+/*---------- uiTree ----------*/
+.uiTrees{
+	background: @primaryBackgroundLight;
+	border: 1px solid @borderColor;
+	padding: 4px;
+	a {
+		display: inline-block;
+		color: @textColor;
+		width: auto; 
+	}
+	.treeContainer{
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding-bottom: 12px;
+		.node{
+			line-height: 19px;
+			margin-left: 10px;
+			padding-top: 7px;
+			white-space: nowrap;
+			.node {
+				padding-left: 10px;
+			}
+			.uiIconNode{
+				padding-left: 16px;
+			  	font-family: @sansFontFamily;
+                font-size: @baseFontSize;
+				.uiIconNode{
+					padding-left: 0px;
+				}
+				i {
+					margin-right: 6px;
+					.size(16px,16px);
+					display: inline-block;
+					vertical-align: middle;
+				}
+				.uiCheckbox{
+					span{
+						text-indent: 9px;
+						i{
+							top: -1px;
+						}
+					}
+				}
+			}
+			.nodeSelected{
+				font-weight: bold;
+			}
+		}
+	}
+    .collapseIcon,.expandIcon,.uiIconEmpty {
+        position: relative;
+        padding-left: 15px;
+        &:before {
+            .font-icon();
+            position: absolute;
+            top: 3px;
+            left:0;
+            font-size: 9px;
+        }
+    }
+	.collapseIcon {
+		.square(auto);
+		margin: 0px;
+        &:before {
+            content: "\e745";//uiIconColorMiniSquarePlus
+        }
+
+	}
+	.expandIcon{
+        &:before {
+            content: "\e744";//uiIconColorMiniSquareMinus
+        }
+	}
+	.uiIconEmpty  {
+        &:before {
+            content: "\e743";// uiIconColorMiniSquareBlank
+        }
+	}
+}
+
+.uiBox {
+	 > .uiTrees {
+		border: none;
+		.border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+	}
+}
+

@@ -1,0 +1,709 @@
+		
+.maskLayer {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.8);
+	color: @textColor;
+	.uiDocumentPreview.collapsed {
+		#documentPreviewContent, .uiPreviewWebContent, .EmbedHtml, .previewBtn {
+			margin-right: 30px;
+		}
+		.commentArea {
+			display: none;
+		}
+		.resizeButton {
+			right: 5px;
+			.uiIconMiniArrowLeft {
+				display: block;
+			}
+			.uiIconMiniArrowRight {
+				display: none;
+			}
+		}
+	}
+	.uiDocumentPreview {
+		padding-left: 30px;
+		padding-top: 35px;
+
+		.label {
+			background-color: #578dc9;
+		}
+		.exitWindow .uiIconClose { 
+			position: absolute;
+			top: 7px;
+			right: 7px;
+		  	cursor: pointer;
+			&:hover {
+                color: @colorIconSecondary!important;
+			}
+		}
+		.uiContentBox {
+			padding: 0;		
+		}
+		.comments .commentBar {
+			display: none;
+			visibility: hidden;
+		}
+		.commentArea {
+			height: 610px;
+		    margin-bottom: 0;
+		    width: 365px;
+			.title {
+				font-weight: bold;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+			}			
+			.uiContentBox {
+				padding: 0;
+				border-radius: 3px;
+				background: @primaryBackgroundLight;
+				.highlightBox {
+					padding: 10px 10px 20px;
+					background: @bodyBackground;
+					.profile .rightBlock {
+						margin-left: 60px;
+						a {
+							font-weight: bold;						
+						}
+						p.dateTime {
+							font-size: 11px;
+							color: @textLightColor;
+						}
+					}
+					.descript {
+						margin-bottom: 0;
+					    overflow: hidden;
+					    padding: 10px 0;
+					}
+				}
+				.actionBar {
+					padding: 5px 0;
+					border-top: 1px solid @borderColor;
+					.tooltip-inner {
+						white-space: nowrap;
+					}
+					.tooltip.bottom {
+						margin-left: -28px;
+					}
+					.tooltip-arrow {
+						margin-left: 10px;
+					}
+					ul > li {
+						display: inline-block;
+						margin: 0 5px;
+						a {
+							color: @textColor;	
+							&:hover {
+								color: @linkColorHover;
+							}					
+						}
+					}						
+				}
+				.comments {
+					padding: 0px;
+					.uiLoadingIconSmall {
+						margin: 10px auto;
+						display: block;
+					}
+					.commentList {
+						overflow: auto;
+						background: @bodyBackground;
+						padding: 8px 0;
+						li {
+							padding: 8px 10px;
+							.close {
+							  position: absolute;
+							  right: -19px;
+							  top: 3px;
+							  display: none;
+							}
+							&:hover {
+							  .close {
+								display: block;
+							  }
+							}
+						}
+						.avatarXSmall {
+							margin-top: 5px;
+						}
+						.rightBlock {
+							margin-left: 45px;
+							margin-right: 15px;
+							position: relative;
+							ol {
+								li {
+									list-style-type: decimal;
+								}
+							}
+							ul {
+								li {
+									margin-left: 25px;
+									list-style-type: disc;
+								}
+							}
+							word-break: break-all;
+							.tit {
+								a {
+									font-weight: bold;
+									color: @linkColor;
+								}
+								.dateTime {
+									color: @textLightColor;
+									font-size: 11px;
+								}
+							}
+						  .cont {
+							word-wrap: break-word;
+							margin: 0 ;
+						  }
+						}
+					}
+			  	}
+
+				.noComment {
+					text-align: center;
+					margin: 0 auto;
+					padding: 0 0 20px;
+					background: @bodyBackground;									
+					.info {
+                        background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat center center;
+						color: @textLightColor;
+						font-size: @fontSizeLarge;
+						padding: 80px 0 0;
+					}
+					.error {
+                        background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat center center;
+						color: @errorColor;
+						font-size: @fontSizeLarge;
+						padding: 80px 0 0;
+					}				
+				}
+				.commentInputBox {
+					border-top: 1px solid @borderColor;
+					border-bottom: 1px solid @borderColor;
+				    margin: 0;
+				    padding: 10px;
+					height: 158px;
+					overflow-y: auto;
+				  	.commentBox {
+						padding-left: 40px;
+						.cke {
+							.cke_contents {
+								overflow: hidden !important;
+							}
+						}
+					}
+					textarea {
+						height: 28px;
+						margin: 4px 0 4px 9px;
+						width: 235px;
+						resize: none;
+					}
+					#CancelButton {
+						display: none;
+					}
+					.btn {
+						margin-top: 8px;
+					}
+					#CancelButton {
+						margin-left: 4px;
+					}
+				    .mask {
+				    	position: relative;
+						.replaceTextArea {
+							background: none repeat scroll 0 0 @baseBackground;
+							border: 1px solid @borderColor;
+							border-radius: 4px;
+							box-shadow: 0 2px 1px rgba(0, 0, 0, 0.075) inset;
+							color: @textColor;
+							cursor: text;
+							font-size: 13px;
+							height: 24px;
+							margin: 0 0 0 45px;
+							overflow-x: hidden;
+							overflow-y: auto;
+							padding: 5px 8px;
+							resize: none;
+							width: auto;
+							word-wrap: break-word;
+						}
+						.placeholder {
+							left: 55px;
+							opacity: 0.85;
+							position: absolute;
+							top: 5px;
+							color: @textLightColor;
+						}
+					}					
+				}
+			}
+		}	
+		.resizeButton {
+			cursor: pointer;
+		    height: 16px;
+		    right: 371px;
+		    position: absolute;
+		    top: 50%;	
+				.uiIconMiniArrowLeft {
+					display: none;
+				}
+				.uiIconMiniArrowRight {
+					display: block;
+				}
+		}
+
+	    .EmbedHtml {
+		  	margin-right: 335px;
+			border: none;
+			margin-bottom: 0;
+			overflow: hidden;
+			position: relative;
+			background: @baseColor;
+				iframe, embed {
+				width: 100%;
+				left: 50%;
+				top: 50%;
+				border: none !important;
+				position: static;
+				transform: none;
+				-ms-transform: none;
+				-webkit-transform: none;
+				}
+		}
+	  	#documentPreviewContent {
+			position: relative;
+			margin-right: 390px;
+
+			div.loading {
+				width: 100%;
+
+				i {
+					margin: 0 auto;
+					display: block;
+				}
+			}
+	  	}
+		.EmbedHtml > a > img {
+			width: auto;
+			height: auto;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+            .translate(-50%, -50%);
+		}
+		.fileContent {
+			.title {
+			  display:  none;
+			  visibility: hidden;
+			}
+			#outerContainer {
+				border-radius: 3px;
+				overflow-y: auto;
+				margin-bottom: 0px;
+				height: 580px;		
+			}
+			.navigationContainer {
+				border: none;
+				margin-bottom: 0;
+				overflow: hidden;
+				position: relative;
+				background: @baseColor;
+				.title {
+					display:  none;
+					visibility: hidden;
+				}
+				.content {	
+					text-align: center;
+				}
+				.uiUnEditable {
+					margin: 0px auto;
+					.iconContainer {
+						text-align: center;
+						.nameDoc {
+							display: block;
+							margin: 15px 0;
+							color: @textLightColor;
+						}
+					}
+					.detailContainer {
+						text-align: center;
+						padding-bottom: 30px;
+						h4 {
+							color: @baseColorLight;
+							margin-top: 0px;
+							margin-bottom: 20px;
+							text-shadow: none;
+						}
+						button, a {
+							margin: 0 7px 0 0;
+							[class^="uiIcon"] {
+								margin-right: 7px;			
+							}
+						}
+					}
+				}
+				img, object, .uiUnEditable {
+					width: 100%;
+					left: 50%;
+				    position: absolute;
+					top: 50%;
+                    .translate(-50%, -50%);
+				}
+				video {
+				  width: 100%;
+				  left: 50%;
+				  top: 50%;
+				  position: static;
+				  transform: none;
+				  -ms-transform: none;
+				  -webkit-transform: none;
+				}
+
+				.object-mkv-mpeg {
+				  position: static;
+				  transform: none;
+				  -ms-transform: none;
+				  -webkit-transform: none;
+				}
+				&.noPreview {
+					background: @baseBackground;
+				}
+			}
+		}
+
+		.uiPreviewWebContent {
+			background: @baseBackground;
+			height: 550px;
+			margin-right: 335px;
+			padding: 15px;
+			border-radius: 3px;
+			overflow-y: auto;
+			word-wrap: break-word;
+		}
+		.uiVote {
+		  	float: left;
+			height: 20px;
+			padding: 5px 0;
+			.voteRatingInfo {
+				color: @btnPrimaryColor;
+			  	line-height: inherit;
+				span {
+					color: @btnPrimaryColor;
+				}
+			}
+			.avgRatingImages {
+				float: right;
+			}
+		}
+		.previewBtn {
+			bottom: 7px;
+		  	text-align: right;
+		  	margin-right: 390px;
+		  	padding: 5px 0px 0 0;
+		  	.openBtn, .downloadBtn, .showComments {
+			    float: right;
+			  	padding-left: 15px;
+			}
+			.showComments {
+				display: none;
+			}
+		    a {
+		    	color: @btnPrimaryColor;
+		    	&:hover i, &:active i, &.active i, {
+                    color: @colorIconSecondary;
+		    	}
+		    }
+		}
+	}
+}
+
+.toolbar .actionIcon.disabled {
+  .opacity(50);
+  &:hover {
+	background: none;
+	border: 1px solid transparent;
+	box-shadow: none;
+	cursor: unset;
+	i {
+        color: @colorIconDefault;
+	}
+  }
+  &:focus {
+	background-color: inherit;
+	outline: none;
+	border-color: transparent;
+	box-shadow: none;
+  }
+}
+
+
+.outerCenter .actionIcon {
+    text-align: center;
+    margin: 0 2px;
+}
+.exit-document-preview {
+    display: none;
+}
+
+@media (max-width: 767px) {
+	.maskLayer {
+		.uiDocumentPreview {
+			.commentArea {
+				overflow-y: auto;
+				.uiContentBox {
+					.commentInputBox {
+						padding-bottom: 120px !important;
+					}
+					.comments {
+						.commentList {
+							overflow: hidden !important;
+							max-height: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media(max-width: 1024px) {
+
+	.document-preview-default {
+		.dowload-link {
+			display: none;
+		}
+	}
+
+	.uiDocumentPreview {
+		.previewBtn {
+			.showComments {
+				display: block!important;
+			}
+		}
+	}
+
+	.maskLayer .uiDocumentPreview {
+		#documentPreviewContent, .uiPreviewWebContent, .previewBtn {
+			margin-right: 0;
+		}
+		.commentArea, .resizeButton {
+			display: none;
+			width: 100%;
+		}
+		.commentArea {
+			.uiContentBox {
+				.actionBar{
+					display: none;
+				}
+				.highlightBox {
+					.profile {
+						display: none;
+					}
+				}
+				.commentInputBox {
+					#CancelButton {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	.maskLayer .uiDocumentPreview.collapsed {
+		#documentPreviewContent, .uiPreviewWebContent, .previewBtn {
+			margin-right: 0;
+		}
+		.commentArea {
+			display: none;
+			width: 100%;
+		}
+	}
+
+	.maskLayer .uiDocumentPreview .fileContent .navigationContainer img,
+	.maskLayer .uiDocumentPreview .fileContent .navigationContainer object {
+		top: 34px;
+		.translate(-50%, 0px);
+	}
+
+	.maskLayer .uiDocumentPreview .fileContent {
+		margin: 0
+	}
+
+	.maskLayer .uiDocumentPreview {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	#documentPreviewContainer {
+		.uiIconResize {
+			display: none !important;
+		}
+		.secondaryToolbar .dropdown-menu li > a:focus > [class^="uiIcon"] {
+			background: none;
+		}
+		.PopupContent {
+			height: 100% !important;
+			margin-bottom: 0px !important;
+			margin-top: 0px !important;
+			max-height: none !important;
+			padding: 0 0 0 0 !important;
+			width: 100%;
+			overflow: visible;
+			position: absolute !important;
+			top: 50px !important; //1.2
+			background: none;
+		}
+		#toolbarContainer {
+			.outerCenter {
+				display: none;
+			}
+		}
+		.secondaryToolbar {
+			top: 42px; //1.2
+		}
+		#sidebarContainer {
+			top: 38px; //1.2
+		}
+		#sidebarContent {
+			background: rgba(240, 240, 240, 0.8);
+			border: none;
+			//top: 38px;
+			width: 132px;
+		}
+		#toolbarSidebar {
+			background: rgba(240, 240, 240, 0.8);
+			border: none;
+			height: auto;
+			width: 132px;
+			#viewThumbnail {
+				margin-left: 7px;
+			}
+		}
+		#toolbarViewer {
+			height: 38px; //1.2
+			#toolbarViewerLeft {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				text-align: center;
+				width: 60%;
+
+			}
+			#toolbarViewerRight {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				width: 40%;
+				text-align: right;
+				& > a {
+					float: none;
+				}
+			}
+		}
+
+		#outerContainer {
+			background: white;
+			min-width: 100px;
+		}
+		#viewerContainer {
+			background: white;
+		}
+		.popupHeader, .maskLayer .uiDocumentPreview .resizeButton {
+			display: none;
+		}
+	}
+
+	.maskLayer {
+		.fileContent .navigationContainer {
+			background: none !important;
+		}
+		.uiDocumentPreview {
+			padding-top: 50px;
+
+			.exitWindow .uiIconClose {
+				//left: 15px;
+				right: 18px;
+				color: @colorIconDefault;
+				cursor: pointer;
+				z-index: 10009 !important;
+				top: 20px !important;
+				position: fixed !important;
+				.opacity(100);
+				&:before {
+					//content: "\e74f";
+					font-size: 20px;
+				}
+				&:hover {
+					color: @colorIconPrimary;
+					&:before {
+						color: @colorIconPrimary;
+					}
+				}
+			}
+		}
+	}
+
+	.uiDocumentPreview {
+		#outerContainer.sidebarOpen > #mainContainer {
+			left: 0;
+		}
+		#outerContainer.sidebarOpen > #sidebarContainer {
+			left: 0;
+		}
+		#sidebarContainer {
+			z-index: 100;
+		}
+		.doorHanger:after, .doorHanger:before {
+			margin-left: 5px;
+		}
+		.doorHanger:after {
+			left: 14px;
+		}
+	}
+
+	.uiDocumentPreview, .document-preview-default, .document-preview-content-file {
+		.uiContentBox {
+			background: none;
+		}
+		.previewBtn {
+			margin-right: 0px;
+		}
+	}
+}
+//end 1024
+@media (min-width: 768px) and (max-width: 1024px) {
+  .maskLayer .uiDocumentPreview {
+	  padding-left: 10px;
+	  padding-right: 10px;
+
+	  .findbar {
+		  left: 40px; //1.2
+	  }
+  }
+}
+
+@media (max-width: 480px) {
+    #documentPreviewContainer {
+        .uiDocumentPreview {
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            .voteRatingInfo {
+                display: none;
+            }
+            
+            .previewBtn {
+              margin-right: 0px;
+              font-size: 0;
+            }
+        }
+    }
+}
+
+//hack safari document preview
+@media (max-width: 1024px)  and (-webkit-min-device-pixel-ratio:0) {
+    body  #documentPreviewContainer { top: 0px !important;}
+}

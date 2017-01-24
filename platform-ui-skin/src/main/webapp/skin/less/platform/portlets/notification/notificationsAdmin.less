@@ -1,0 +1,88 @@
+@import "../../../variables.less";
+@import "../../../mixins.less";
+
+.uiNotificationAdmin {
+	padding: 20px 30px;
+    .senderForm {
+    	label {
+            line-height: 27px;
+            margin-bottom: 0;
+            margin-right: 6px;
+    	}
+    }
+    .uiIconPLFWeb:before {
+        content: "\e73a";
+    }
+    .uiIconPLFMail:before {
+        content: "\e6b8";
+    }
+	.uiGrid.table {
+		thead {
+			th:last-child {
+				width: 40%;
+			}
+		}
+		tr.disable {
+			color: @tableBackgroundAccent;
+		}
+		tr {
+			td {
+				&:first-child{
+					>label{
+						padding-left: 20px;
+					}
+				}
+			}
+			td .view .edit-mode,
+			td .view .save-setting {
+				display: none;
+			}
+			td .edit .view-mode,
+			td .edit .edit-setting {
+				display: none;
+			}
+
+		}
+	}
+
+	.view-mode, .edit-mode {
+		> div {
+			padding: 2px 0;
+		}
+	}
+	.view-mode {
+		[class^="uiIconPLF"] {
+			margin-right: 4px;
+		}
+		> span {
+			color: @baseColorLight;
+		}
+	}
+	.edit-mode {
+		.uiCheckbox {
+			margin-left: 0;
+			.checkbox + span {
+				padding-left: 6px;
+			}
+		}
+	}
+	.plugin-container {
+		position: relative;
+		.right-view {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			.translate(0, -50%);
+		}
+	}
+	.inputContainer {
+		margin: 0 auto;
+	}
+}
+
+
+@media (max-width: 480px) {
+    .uiNotificationAdmin {
+       padding: 15px 10px;
+    }
+}

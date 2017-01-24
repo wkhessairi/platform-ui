@@ -1,0 +1,85 @@
+//
+// Label - Badges
+// --------------------------------------------------
+.label {
+	background-color: @labelBackground;
+	.border-radius(3px);
+    .box-shadow(none);
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 2px 10px;
+    vertical-align: middle; 
+    text-shadow: none;
+	a {
+		color: @labelColor;
+		font-size: @baseFontSize - 3;
+		&:hover {
+			text-decoration:
+			none;color: @labelColor;
+		}
+	}
+	&:hover {
+		background-color: @labelHoverBackground;
+	}
+	&.primary {
+		background-color: @primaryColor;
+		&:hover {
+			.uiIconClose {
+				 color: @colorIconSecondary !important;
+			}
+		}
+		.uiIconClose:hover {
+            color: @colorIconSecondary !important;
+		}
+	}
+}
+
+.badgeDefault {
+	background-color: @primaryBackground;
+	.box-shadow(1px 2px 1px rgba(0, 0, 0, 0.1));
+	.border-radius(2px);
+    color:@textColor;
+    font-size: 11px;   
+    display: inline-block;
+    font-weight: bold;
+    height: 16px;
+    line-height: 15px;
+    padding: 0 6px;
+    vertical-align: middle;
+    &.badgePrimary {
+    		background-color: @primaryColor;
+    		color: @baseBackground;
+    }
+     &.badgeWhite {
+    		background-color: @baseBackground;
+    		color:@textColor;
+    }
+    &.top {
+    	vertical-align: top;
+    }
+    &.mini {
+    	font-size: 10px;   
+	    height: 13px;
+	    line-height: 12px;
+	    padding: 0 3px;
+    }
+}
+
+.badgeNotification {
+		position: relative;
+		.badgeDefault {
+			position: absolute;
+	    right: -10px;
+	    top: -10px;
+		 &.mini {
+		 	 right: -6px;
+    	top: -6px;
+		 }
+		}
+}
+
+.uiAccordion  .active .badgeDefault.badgePrimary {
+    background-color: @primaryBackground;
+    color: @textColor;
+}

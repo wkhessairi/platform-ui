@@ -1,0 +1,33 @@
+//
+// VTabInputSet
+// --------------------------------------------------
+.uiVTabInputSet {
+	.itemListContainer {
+		margin:0px 0 0 10px;
+		width: 100%;
+		.uiContentBox {
+			padding: 15px;
+		}
+		.itemList {
+			li  {
+				.item {
+					color : @textColor;
+					display: block;
+					padding:4px 10px;
+					margin: 0;
+					text-align: left;
+					[class^="uiIcon"] {
+						margin-right: 10px;
+					}
+				}
+				+ li {
+					margin-top: 6px;
+					.item {
+						margin-top: 4px;
+					}
+				}
+			}
+		}
+	}
+
+}

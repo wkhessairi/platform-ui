@@ -1,0 +1,1950 @@
+
+/*=================uiComposer =================*/
+
+.uiComposer {
+	margin-bottom: 30px;
+
+	.ShareButtonsTop {
+
+	}
+
+	div#ActivityComposerExt {
+		height: 30px;
+
+		.ActivityComposerExtItem {
+			height: 30px;
+			margin-left: 15px;
+
+			a {
+				color: @textLightColor;
+				&:hover {
+					color: @linkColorHover;
+				}
+				i.uiIconSocLightGray {
+					padding-right: 4px;
+				}
+			}
+
+			&.ActivityComposerExtItemSelected {
+				height: 30px;
+				box-sizing: content-box;
+				border-bottom: 1px solid @linkColorHover;
+
+				a {
+					color: @linkColorHover;
+					font-weight: bold;
+					i.uiIconSocLightGray {
+						color: @linkColorHover;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+
+	.desktop-input {
+		margin-bottom: 10px;
+
+		.blastInputPeople, .blastInputSpace {
+			textarea {
+				display: none;
+			}
+		}
+	}
+
+	.uiComposerLink {
+		display: block;
+		background-color: #F8F8F8;
+		box-sizing: border-box;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		padding: 0px;
+
+		.buttonLink, .inputLink {
+			display: table-cell;
+			width: 100%;
+			padding: 8px;
+		}
+
+		.inputLink input {
+			width: 100%;
+		}
+	}
+}
+
+.uiLinkShareDisplay {
+	position: relative;
+	.border-radius(@baseBorderRadius);
+	.box-shadow(~"inset 0px 1px 0 @componentBackground ,0px 1px 0 @componentBackground");
+	border: 1px solid @borderColor;
+	background: @primaryBackground;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	.thumbnailContainer {
+		.thumbnailLeft {
+			float: left;
+			.size(140px,130px);
+			margin-bottom: 0;
+		}
+		.thumbnailLeft + .contentRight  {
+			margin-left: 140px;
+			&.resetMargin {
+				margin-left: 0;
+			}
+		}
+		.uiContentBox {
+			padding: 6px;
+			.thumbnailInner {
+				height: 100px;
+				overflow: hidden;
+				.border-radius(@baseBorderRadius);
+				img {
+					.border-radius(@baseBorderRadius);
+				}
+			}
+		}
+		.thumbnailAction {
+			margin: 4px 0 0 0;
+			.stats {
+				text-align: center;
+			}
+		}
+	}
+
+	.thumbnailHidden {
+		display: none;
+	}
+	.contentRight {
+		padding: 0 20px 0 0;
+		.title  {
+			color : @linkColor;
+			margin: 0px;
+		}
+		.source {
+			margin: 10px 0;
+			color : @linkColor;
+		}
+		.source + label {
+			margin: 0;
+		}
+		textarea,input[type="text"] {
+			width: 90%;
+		}
+	}
+	.uiIconClose {
+		position: absolute;
+		right:6px;
+		top: 6px;
+	}
+}
+
+/*==============ActivityStream====================*/
+
+.uiActivityStream ,.uiActivitiesLoader {
+	background: url("@{images-path}/social/skin/Activity/time-line-top.png") no-repeat 14px 0;
+	margin-top: 3px;
+	padding-top: 31px;
+	position: relative;
+	&.clearBG {
+		background: none;
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+}
+
+.uiUserActivitiesDisplay.notSeen {
+ 	.uiActivityStream,.uiActivitiesLoader,.boxLoadMore{ 	
+		background: url("@{images-path}/social/skin/Activity/time-line-top-active.png") no-repeat 14px 0;
+	}
+}
+
+.uiUserActivitiesDisplay {
+	.composerHintCont {
+		background: @infoColorLight;
+	    border: 1px solid @infoColor;
+	    .border-radius(4px);
+	    margin: -20px 0 20px;
+	    padding: 10px 30px 10px 15px;
+	    position: relative;
+	}
+	.composerHintCont .arrowLeft {
+	    border-bottom: 15px solid @infoColor;
+	    border-left: 15px solid transparent;
+	    border-right: 15px solid transparent;
+	    bottom: 100%;
+	    display: block;
+	    position: absolute;
+	    right: 24px;
+	    &:after {
+			border-bottom: 16px solid @infoColorLight;
+			border-left: 16px solid transparent;
+			border-right: 16px solid transparent;
+			content: "";
+			display: block;
+			left: -16px;
+			position: absolute;
+			top: 1px;
+	    }
+	}
+
+	.composerHintCont .iconBorder {
+		background-color: @primaryBackgroundLight;
+	    border: 1px solid @borderColor;
+	    .border-radius(3px);
+	    cursor: pointer;
+	    display: block;
+	    padding: 0px 5px; // padding changed to get the close button to be square
+	    line-height: 20px;
+	    position: absolute;
+	    right: 7px;
+	    top: 9px;
+        .uiIconClose {
+            top: -1px;
+        }
+	}
+
+	.composerHintCont .hint {
+		font-size: 16px;
+		color: @infoText;
+	}
+
+	.description {
+		padding: 30px 16px;
+		display: inline-block;
+	}
+}
+
+/*==============activityStreamStatus=============== */
+
+.activityStreamStatus {
+	.border-radius(@baseBorderRadius);
+	background: @primaryBackground;
+	border: 1px solid @borderColor;
+	padding: 5px 18px;
+	position: relative;
+	.arrowBottom {
+	    border-left: 9px solid transparent;
+	    border-right: 9px solid transparent;
+	    border-top: 9px solid @borderColor;
+	    display: block;
+	    left: 16px;
+	    position: absolute;
+	    top: 100%;
+		&:after {
+		    border-left: 9px solid transparent;
+		    border-right: 9px solid transparent;
+		    border-top: 9px solid @primaryBackground;
+		    bottom: 1px;
+		    content: "";
+		    display: block;
+		    left: -9px;
+		    position: absolute;
+		}
+	}
+}
+
+.uiUserActivitiesDisplay.notSeen {
+	.activityStreamStatus {
+		background: @primaryBackgroundHover;
+		border: 1px solid @borderColor;
+		.arrowBottom {
+			&:after {
+				border-top-color: @primaryBackgroundHover;
+			}
+		}
+	}
+}
+
+/*activityTimeLine */
+
+.activityTimeLine  {
+	.activityType {
+		.circleBorderAvatar(22px);
+		margin: 8px 12px;
+		padding: 2px;
+		line-height: 22px;
+		.box-shadow(0px 2px 4px rgba(13px, 13px, 13px, 0.27));
+		span{
+			.box-shadow(~"inset 0px 1px 1px  rgba(0,0,0,0.35) ,0px 1px 1px @baseBackground");
+			display:block;
+			background: @primaryLightColor;
+			color: @baseBackground;
+			.border-radius(100px);
+			text-align: center;
+			span {
+				position: relative;
+				top: -4px;
+				font-weight: bold;
+				color: @baseBackground;
+			}
+		}
+		&.loadMore {
+			margin-top: 0;
+		}
+	    img{
+		  vertical-align: top;
+		}
+	}
+}
+
+/* activitiBottom */
+.activityBottom {
+	background: url("@{images-path}/social/skin/Activity/time-line-bottom.png") no-repeat 13px -2px;
+	display: block;
+	height: 27px;
+}
+
+/*common  activityStreams*/
+
+.activityStream {
+	padding-bottom: 30px;
+	 background: url("@{images-path}/social/skin/Activity/time-line.png") repeat-y 24px 0px;
+	 &.updatedActivity {
+		background: url("@{images-path}/social/skin/Activity/time-line-active.png") repeat-y  24px 0;
+	}	
+	 &.boxLoadMore {
+		padding: 30px 0 0 ;
+	 }
+	.boxContainer{
+		margin: 0px 0px 0px 65px;
+	}
+	.statusAction.pull-right a{
+		color: @baseColorDark;
+	}
+	.contentForum span ,.dataInfor .dateTime a,.dataInfor .dateTime span,.statusAction.pull-left a,.commentItem .viewComment
+	,.author span,.introBox .text .infoFile :not(.versionFile),.linkSources span,.listLikedBox  p,.theContent a,.theContent span {
+		color: @baseColorLight;font-size: 12px;
+	}
+	.heading ,.description,.actionBar {
+		padding: 16px;
+	}
+	.description,.theContent,.viewComment, .contentAnswer, .calendarBox, .titleWiki, a{
+		word-wrap: break-word;
+	}
+    .author {
+	   display: inline-block;
+	   white-space: nowrap;
+	   overflow: hidden;
+	   width: 100%;
+	   .spaceName .uiIconArrowRightMini {
+		font-size: 8px;
+	  }
+	  .circleSpaceAvatar {
+		.circleBorderAvatar(22px);
+		line-height: 5px;
+		padding: 2px;
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid @borderColor;
+	    .box-shadow(0px 0px 1px rgba(13px, 13px, 13px, 0.27));
+	  }
+	  .spaceName{
+		max-width: 50%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: inline-block;
+		vertical-align: middle;
+	  }
+	  .ownerName{
+		max-width: 50%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: middle;
+	  }
+	  .owner{
+		max-width: 80%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: middle;
+	  }
+	}
+}
+
+
+.activityStream{
+	.contentComment {
+		margin-bottom: 0;
+	}
+	.contentComment,.linkSource {
+		word-wrap: break-word;
+	}
+	.textBold {
+		font-weight: bold;
+	}
+	.linkTitle ,.author a, .spaceName,.sumaryPoint > div{
+		font-family : @sansBoldFontFamily;
+		font-weight: bold;
+		 word-wrap: break-word;
+	}
+	.author {
+		a + span {
+			margin-left: 10px;
+		}
+		span {
+			font-size: @fontSizeSmall;
+		}
+	}
+	.arrowBottom {
+		position: absolute;
+		.size(16px,8px);
+		display:block;
+		background: url("@{images-path}/social/skin/Activity/arrows.png") no-repeat -21px 0 ;
+		top: 17px;
+		left: -8px;
+	}
+    .arrowLeft {
+        border-bottom: 8px solid transparent;
+        border-right: 8px solid  @borderColor;
+        border-top: 8px solid transparent;
+        height: auto;
+        left: -9px;
+        position: absolute;
+        width: auto;
+        &:after {
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid @baseBackground;
+            border-top: 8px solid transparent;
+            content: "";
+            display: block;
+            height: auto;
+            left: 1px;
+            position: absolute;
+            top: -8px;
+            width: auto;
+            z-index: 2;
+        }
+    }
+
+	.contentForum .text {
+		padding: 0 0 0 16px;
+		background: url("@{images-path}/social/skin/Activity/text-forum.png") repeat-y left top;
+		margin-top: 10px;
+	}
+}
+
+.activityStream {
+	.titleWiki {
+		clear: both;
+
+	}
+}
+
+/*heading  activityStreams*/
+
+.activityStream{
+	.heading  {
+		position: relative;
+		.actLink {
+			position: absolute;
+			top: 5px;
+			right: 10px;
+			display: none;
+            [class^="uiIcon"]:before {
+                vertical-align: middle;
+
+            }
+            [class^="uiIcon"] {
+                margin-left: 5px;
+            }
+            .uiIconLink {
+                top: -1px;
+            }
+		}
+		&:hover .actLink{
+		   display: block;
+		}
+		.dataInfor {
+			span,a {
+				margin: 0 10px 0 0;
+				font-size: @fontSizeSmall;
+			}
+		}
+        .tooltip-inner {
+            white-space: nowrap;
+        }
+    }
+
+}
+
+/*=============contentBox  activityStreams==================*/
+.activityStream {
+	.contentBox {
+		position: relative;
+		padding-bottom: 30px;
+		margin: 0px ;
+		.commentBox {
+			&.noneCommentOrLike {
+				border: none;
+				border-top: 1px solid @borderColor;
+			}
+		}
+		.commentBlockBoundNone {
+			display: none;
+		}
+		.commentBlockBound  {
+			display: block;
+		}
+		.actionBar,.listLikedBox , .description,.commentBox {
+			display: block;
+			border-top: 1px solid @borderColor;
+
+			ul {
+				margin: 0 0 10px 25px;
+				li {
+					list-style-type: disc;
+				}
+			}
+		}
+		.description {
+			img {
+				margin: 0 10px 10px 0;
+				text-align: center;
+			}
+		}
+		.description:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.actionBar +.listLikedBox , .actionBar  + .commentBox {
+			border-top: none;
+		}
+
+		.actionBar  {
+			background: @primaryBackground;border-bottom: 1px solid @borderColor;
+			padding: 8px 18px;
+			.tooltip-inner {
+				white-space: nowrap;
+			}
+			.tooltip.bottom {
+				margin-left: -10px;
+			}
+			.statusAction {
+				list-style: none;
+				margin: 0;
+				li {
+					display: inline;
+					margin: 0 5px;
+					a:hover {
+						color: @linkColorHover;
+					}
+				}
+
+			}
+		}
+
+		.listLikedBox {
+			padding: 16px 0px 16px 16px;
+			.listLiked {
+				margin-top: 10px;
+				a {
+					margin: 0 8px 8px 0;
+					display: inline-block;
+				}
+				.btn {
+					background: @primaryBackground;
+				    border: none;
+				    .border-radius(2px);
+				    box-shadow: none;
+				    color: @baseColorLight;
+				    font-size: 22px;
+				    padding: 0 0 10px;
+				    .size(36px, 36px);
+				    display:none;
+				}
+			}
+			p {
+				margin: 0;
+			}
+		}
+		.introBox  + .actionBar   {
+			border-top: none;
+		}
+	}
+}
+
+
+
+/*introBox  activityStreams*/
+
+.activityStream {
+	.introBox {
+		padding: 18px;
+		margin:0 -8px 0 -8px;
+		position: relative;
+		.box-shadow(0px 2px 4px  -1px rgba(13,13,13,0.27));
+		#gradient > .vertical-three-colors(@baseBackground, @baseBackground,94%, @primaryBackgroundLight);
+		.pull-left {
+			margin-right: 10px;
+			a.avatarXMedium img {
+				max-height: 75px;
+				max-width: 75px;
+			}
+		}
+		.pull-left + .text {
+			overflow: hidden;
+		}
+	  	.fileBreadCrumb {
+		  	padding: 5px 0px;
+
+			.fixedBreadCrumb {
+			  	float: left;
+
+			  	&:after {
+					display: none;
+					content: '\02026';
+				}
+
+				&.active:after {
+				  	display: inline-block;
+				}
+			}
+
+			.fileBreadCrumbContent {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+			  	span {
+				  	min-width: 100%;
+					float: right;
+					overflow: hidden;
+
+					div.fileBreadCrumbWrapper {
+					  	display: table;
+					}
+				}
+			}
+
+		    .uiIconArrowRight {
+			  	padding: 0 4px;
+			}
+	  	}
+		.descriptionText {
+			word-wrap: break-word;
+			min-height: 30px;
+		  	padding-top: 10px;
+		}
+		.isPreviewable {
+			position: relative;
+
+			.mediaContent  {
+			  	display: table;
+				max-width: 300px;
+			  	cursor: pointer;
+
+			  	.doc-preview-thumbnail-footer {
+				  	pointer-events: none;
+					height: 25px;
+					font-size: 13px;
+					line-height: 15px;
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+				}
+			}
+		}
+
+		&:before ,&:after{
+			.square(0px);
+			position: absolute;
+			content: "";
+			display: inline-block;
+			vertical-align: top;
+			border-top: medium none;
+			top: -7px;
+		}
+		&:before {
+			border-bottom: 6px solid @baseColorLight;
+			border-left: 7px solid transparent;
+			left: -1px;
+
+		}
+		&:after {
+			border-bottom: 6px solid @baseColorLight;
+			border-right: 6px solid transparent;
+			right: 0px;
+		}
+		.content {
+			word-wrap: break-word;
+		}
+	}
+}
+
+
+/*comment area*/
+
+.activityStream {
+	.commentListInfo {
+		padding:10px 15px;
+	}
+	.commentListInfo  + .commentList {
+		padding-top: 0;
+	}
+	.commentList {
+		padding:10px 10px 0 10px ;
+		> div {
+			padding: 5px;
+			+ div {
+				margin-top: 4px;
+			}
+			&.focus {
+				background-color: @primaryBackgroundLight;
+			}
+		}
+		.commentItem {
+			position: relative;
+			&+ .commentItem {
+				margin: 15px 0 0 0;
+			}
+			.ContentBlock {
+				 word-wrap: break-word;
+			}
+			.actLink {
+				position: absolute;
+				right: -10px;
+				top: 0px;
+				display:none;
+				.tooltip {
+					-moz-pointer-events: none;
+					-webkit-pointer-events: none;
+					-ms-pointer-events: none;
+					pointer-events: none;
+				}
+			}
+			.uiIconClose ,.viewComment,.uiIconLink{
+				&:hover {
+					color: @linkColorHover;
+				}
+			}
+
+        
+			.uiIconClose {
+				top: -1px;
+			}
+            [class^="uiIcon"] {
+                margin-left: 5px;
+            }
+            .uiIconClose + .viewComment {
+				right: 25px;
+			}
+			&:hover  .actLink{
+				display: block;
+			}
+			.commmentLeft {
+				float:left;
+				&+ .commentRight{
+					 margin-left: 45px;
+				}
+				.avatarXSmall {
+					.center-block();
+				}
+			}
+			.commentInputBox  {
+				padding: 3px 0 0 ;
+				.btn {
+					margin-top: 1%;
+					margin-right: 2%;
+					position: relative;
+    				z-index: 1;
+				}
+				.commentInput {
+					textarea {
+						 .size(28px,100%);
+						 resize: none;
+						 max-height: 28px;
+					}
+					.cke {
+						.cke_contents {
+							overflow: hidden;
+						}
+					}
+				}
+			}
+		}
+		.commentItemFirst {
+			padding-top: 15px;
+		}
+	}
+	.inputContainer {
+	  display: none;
+		padding-top: 0;
+		.commentItem  {
+			padding-bottom: 15px;
+		}
+	}
+	.noCommentFormBox {
+		padding-top: 15px;
+	}
+	.tooltip {
+      white-space: nowrap;
+    }
+}
+
+.uiUserActivityDetail .activityStream .commentList .commentItem .actLink {
+  right: 0;
+}
+
+.uiUserActivityDetail .activityStream .heading .actLink {
+  right: 15px;
+}
+
+/*================uiAnswerActivity=======================*/
+
+.uiAnswerActivity {
+	.contentAnswer .clearfix {
+		margin: 15px 0;
+	}
+	.sumaryPoint {
+		text-align: center;
+		.border-radius(@baseBorderRadius);
+		background: @primaryBackground;
+		padding: 5px 2px;
+		&.pull-left {
+			width: 50px;
+			margin: 0 10px 5px 0;
+    		padding: 5px 10px;
+		}
+	}
+}
+
+/*================uiCalendarActivity=======================*/
+
+.uiCalendarActivity {
+	.introBox .clearfix .calendarBox {
+		width: 50px;
+	}
+	.introBox .clearfix .calendarBox + .text {
+		margin-left: 65px;
+
+	}
+	p {
+			margin-bottom: 5px;
+	}
+
+	.introBox .clearfix .statusTask {
+		width: 40px;
+		&+  .text {
+			margin-left: 55px;
+		}
+	}
+
+	.calendarBox {
+		.heading {
+			padding:0;
+		}
+	}
+}
+
+/*================uiWikiActivity=======================*/
+.uiWikiActivity {
+	.headingContainer {
+		border-bottom: 1px dotted @borderColor;
+		margin: 0 0 10px;
+		padding: 0 0 10px;
+		.versionLabel {
+			color: @baseColorLight;
+		}
+	}
+}
+
+/*================uiContentActivity=======================*/
+
+.uiContentActivity {
+	.introBox.contentShare  .pull-left {
+		margin-right: 10px;
+		&+ .text {
+			overflow: hidden;
+
+		}
+	}
+}
+
+.boxLoadMore {		
+  background: url("@{images-path}/social/skin/Activity/time-line.png") repeat-y 24px 0px;
+	padding-left: 65px;
+	.showMore  {
+		text-align: center;
+		#gradient .vertical(@primaryBackground, @primaryBackgroundHover);
+		border: 1px solid @borderColor;
+    	.border-radius(@borderRadiusSmall);
+		.box-shadow(0px 2px 2px -1px rgba(35,44,48,0.18));
+		padding: 5px 0;
+		a {
+			color: @baseColorDark;
+		}
+	}
+}
+/*=======Space activity==========*/
+.uiSpaceActivity {
+	.spaceMembers  {
+		color: @baseColorLight;
+		font-size: 12px;
+	}
+}
+
+/*=======fileActivity activity==========*/
+.fileActivity {
+	.introBox .isPreviewable {
+	 	.pull-left {
+	 		margin-right: 10px;
+	 		& + .text {
+	 			overflow: hidden;
+	 		}
+		 }
+		 .fileTypeContent {
+			float: left;
+			margin-right: 10px;
+			& + .text {
+				overflow: hidden;
+			}
+		 }
+		 .PlayerContianer {
+			width: 330px;
+			height: auto;
+			&+ .text {
+				overflow: hidden;
+			}
+		 }
+		.PlayerContent {
+			padding: 0;
+			height: 200px;
+			width: 330px;
+		}
+	}
+	.fileShare {
+		.linkTitle {
+			margin-top: -3px;
+		}
+		.videoContent {
+			width: 100%;
+		}
+	}
+}
+
+.userProfileShare {
+	.userGender  {
+		margin: 0 0 0 20px;
+	}
+	p {
+		margin-bottom: 5px;
+	}
+	.userPosition {
+		color: @linkColor;
+	}
+	.userContact {
+		[class^="uiIcon"]:hover {
+			color: @colorIconDefault;
+		}
+
+		[class^="uiIconSoc"]:hover {
+            color: @colorIconDefault;
+		}
+	}
+}
+
+/*=======Poll activity==========*/
+
+.activityStream  {
+	.pollShare {
+		.pollTitle {
+			margin-bottom : 10px;
+			.numberVoted {
+				color: @baseColorLight;
+			}
+		}
+		h5 {
+			margin: 0;
+		}
+	}
+	.infoVote {
+		.titleVote {
+			float: left;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    width: 290px;
+		}
+		.progressing {
+			color: @baseColorLight;
+		    float: right;
+		    text-align: right;
+		    width: 100px;
+		}
+		.progressBar {
+			margin: 0 100px 0 300px;
+			.progress {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+
+/*=======activityTop==========*/
+
+.activityTop {
+	.uiDropdownWithIcon a.OptionItem {
+		padding: 5px 9px;
+		.icon-play {
+			display: none;
+			visibility: hidden;
+		}
+	}
+}
+
+/*======= User Profile and Space Popup ==========*/
+#tipName {
+    .name {
+    font-weight: bold;
+    color: @linkColor;
+  }
+  &+ blockquote {
+    margin-top: 5px;
+  }
+  &+ #connectMessge{
+    margin-top: 30px;
+  }
+  &+ .connectAction {
+    margin-top: 35px;
+  }
+  #profileName {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 20px;
+  }
+  #description {
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-width: 95%;
+  }
+  #recentActivity {
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right :15px;
+	max-width: 95%;
+  }
+}
+.connectAction {
+    text-align: center;
+    background: @primaryBackground;
+    margin:-10px;
+    padding: 10px;
+  .border-radius(0 0 @borderRadiusSmall @borderRadiusSmall);
+}
+/* TipTip CSS - Version 1.2 */
+
+#tiptip_holder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 240px;
+}
+
+#tiptip_holder.tip_top {
+    padding-bottom: 5px;
+}
+
+#tiptip_holder.tip_bottom {
+    padding-top: 5px;
+}
+
+#tiptip_holder.tip_right {
+    padding-left: 5px;
+}
+
+#tiptip_holder.tip_left {
+    padding-right: 5px;
+}
+
+#tiptip_content {
+    font-size: @baseFontSize - 1;
+  color: @baseColorLight;
+  background: @baseBackground;
+    padding: 10px;
+    border: 1px solid @borderColor;
+    .border-radius(@borderRadiusSmall);
+    .box-shadow(0 3px 4px rgba(0,0,0,0.15));
+}
+
+.profile-popup {
+}
+
+.profile-popup #loading-indicator {
+  background: @baseBackground;
+  position: relative;
+  width: 30px;
+  height: 37px;
+  margin: 2px auto;
+  display: block;
+}
+
+.profile-popup #loading-text {
+  padding: 12px;
+  text-align: center;
+}
+
+.profile-popup .blockG{
+  position:absolute;
+  background-color: @baseBackground;
+  width:3px;
+  height:12px;
+  -moz-border-radius:4px 4px 0 0;
+  -webkit-border-radius:4px 4px 0 0;
+  -webkit-transform:scale(0.4);
+  -webkit-animation-name:fadeG;
+  -webkit-animation-duration:0.5599999999999999s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:linear;
+  -moz-transform:scale(0.4);
+  -moz-animation-name:fadeG;
+  -moz-animation-duration:0.5599999999999999s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-direction:linear;
+  border-radius:4px 4px 0 0;
+  -o-transform:scale(0.4);
+  -o-animation-name:fadeG;
+  -o-animation-duration:0.5599999999999999s;
+  -o-animation-iteration-count:infinite;
+  -o-animation-direction:linear;
+  -ms-transform:scale(0.4);
+  -ms-animation-name:fadeG;
+  -ms-animation-duration:0.5599999999999999s;
+  -ms-animation-iteration-count:infinite;
+  -ms-animation-direction:linear;
+}
+
+.profile-popup #rotateG_01{
+  left:0;
+  top:13px;
+  -webkit-animation-delay:0.20999999999999996s;
+  -webkit-transform:rotate(-90deg);
+  -moz-animation-delay:0.20999999999999996s;
+  -moz-transform:rotate(-90deg);
+  -o-animation-delay:0.20999999999999996s;
+  -o-transform:rotate(-90deg);
+  -ms-animation-delay:0.20999999999999996s;
+  -ms-transform:rotate(-90deg);
+}
+
+.profile-popup #rotateG_02{
+  left:4px;
+  top:5px;
+  -webkit-animation-delay:0.27999999999999997s;
+  -webkit-transform:rotate(-45deg);
+  -moz-animation-delay:0.27999999999999997s;
+  -moz-transform:rotate(-45deg);
+  -o-animation-delay:0.27999999999999997s;
+  -o-transform:rotate(-45deg);
+  -ms-animation-delay:0.27999999999999997s;
+  -ms-transform:rotate(-45deg);
+}
+
+.profile-popup #rotateG_03{
+  left:13px;
+  top:1px;
+  -webkit-animation-delay:0.35s;
+  -webkit-transform:rotate(0deg);
+  -moz-animation-delay:0.35s;
+  -moz-transform:rotate(0deg);
+  -o-animation-delay:0.35s;
+  -o-transform:rotate(0deg);
+  -ms-animation-delay:0.35s;
+  -ms-transform:rotate(0deg);
+}
+
+.profile-popup #rotateG_04{
+  right:4px;
+  top:5px;
+  -webkit-animation-delay:0.41999999999999993s;
+  -webkit-transform:rotate(45deg);
+  -moz-animation-delay:0.41999999999999993s;
+  -moz-transform:rotate(45deg);
+  -o-animation-delay:0.41999999999999993s;
+  -o-transform:rotate(45deg);
+  -ms-animation-delay:0.41999999999999993s;
+  -ms-transform:rotate(45deg);
+}
+
+.profile-popup #rotateG_05{
+  right:0;
+  top:13px;
+  -webkit-animation-delay:0.48999999999999994s;
+  -webkit-transform:rotate(90deg);
+  -moz-animation-delay:0.48999999999999994s;
+  -moz-transform:rotate(90deg);
+  -o-animation-delay:0.48999999999999994s;
+  -o-transform:rotate(90deg);
+  -ms-animation-delay:0.48999999999999994s;
+  -ms-transform:rotate(90deg);
+}
+
+.profile-popup #rotateG_06{
+  right:4px;
+  bottom:3px;
+  -webkit-animation-delay:0.5599999999999999s;
+  -webkit-transform:rotate(135deg);
+  -moz-animation-delay:0.5599999999999999s;
+  -moz-transform:rotate(135deg);
+  -o-animation-delay:0.5599999999999999s;
+  -o-transform:rotate(135deg);
+  -ms-animation-delay:0.5599999999999999s;
+  -ms-transform:rotate(135deg);
+}
+
+.profile-popup #rotateG_07{
+  bottom:0;
+  left:13px;
+  -webkit-animation-delay:0.63s;
+  -webkit-transform:rotate(180deg);
+  -moz-animation-delay:0.63s;
+  -moz-transform:rotate(180deg);
+  -o-animation-delay:0.63s;
+  -o-transform:rotate(180deg);
+  -ms-animation-delay:0.63s;
+  -ms-transform:rotate(180deg);
+}
+
+.profile-popup #rotateG_08{
+  left:4px;
+  bottom:3px;
+  -webkit-animation-delay:0.7s;
+  -webkit-transform:rotate(-135deg);
+  -moz-animation-delay:0.7s;
+  -moz-transform:rotate(-135deg);
+  -o-animation-delay:0.7s;
+  -o-transform:rotate(-135deg);
+  -ms-animation-delay:0.7s;
+  -ms-transform:rotate(-135deg);
+}
+
+@-webkit-keyframes fadeG{
+  0%{ background-color:@baseColor }
+  100% { background-color:@baseColor }
+}
+
+@-moz-keyframes fadeG{
+  0% { background-color:@baseColor }
+  100%  { background-color: @baseBackground
+  }
+}
+
+@-o-keyframes fadeG{
+  0% { background-color:@baseColor }
+  100% { background-color: @baseBackground
+  }
+}
+
+@-ms-keyframes fadeG{
+  0% { background-color:@baseColor }
+  100% { background-color: @baseBackground
+  }
+}
+
+
+// Arrows
+
+#tiptip_arrow, #tiptip_arrow_inner{
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+#tiptip_holder  #tiptip_arrow_inner {
+  z-index: -1;
+}
+
+#tiptip_holder{
+  &.tip_left_top  #tiptip_arrow,&.tip_left_bottom  #tiptip_arrow{
+    display: none;
+  }
+  #tiptip_arrow{
+    right: -@popoverArrowWidth + 6;
+    margin-top: -@popoverArrowWidth;
+    border-width: @popoverArrowWidth 0 @popoverArrowWidth @popoverArrowWidth;
+    border-left-color: @popoverArrowColor;
+     #tiptip_arrow_inner {
+      border-width: @popoverArrowOuterWidth 0 @popoverArrowOuterWidth @popoverArrowOuterWidth;
+      border-left-color: @popoverArrowOuterColor;
+      bottom: -@popoverArrowOuterWidth;
+      right: -1px;
+    }
+  }
+}
+/*
+
+blockquote {
+    background: url("@{images-path}/social/skin/Activity/right-quote.png") no-repeat right bottom;
+    padding-right: 25px;
+    padding-left: 25px;
+    color: @baseColorLight;
+    border-left: medium none;
+    width:75%;
+    word-wrap:break-word;
+  position: relative;
+}
+
+blockquote:after {
+  background: url("@{images-path}/social/skin/Activity/left-quote.png") no-repeat left top;
+  .size(13px,15px);
+  position:absolute;
+  top:2px;
+  left: 0;
+}
+*/
+#tipName img {
+   max-height : 34px;
+   max-width : 34px;
+   .border-radius(@borderRadiusSmall);
+}
+
+#connectMessge {
+    background: @primaryBackground;
+    margin: -10px;
+    padding: 10px 20px;
+    color: @baseColorLight;
+    font-weight: bold;
+}
+
+
+#tiptip_holder .detail {
+  margin-left: 45px;
+}
+
+/*======= End of User Profile Popup ==========*/
+
+.uiActivityFileAttachment, .uiActivityActionAttach {
+	box-sizing: border-box;
+	border: 1px solid @borderColor;
+    .box-shadow(~'0 2px 1px -2px rgba(255,255,255,1), 0 3px 1px -2px rgba(255,255,255,0.6) inset');
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 0px;
+    color: @baseColorDark;
+    width: 100%;
+    
+    .fileName {
+      color: #2f5e92;
+    }
+    
+    .userInfo {
+      color: #9F9F9F;
+    }
+}
+
+.uiActivityFileAttachment {
+    padding: 20px 10px;
+    font-weight: bold;
+    background-color: #EFEFEF;
+    
+    .uiClose {
+        top: -10px;
+    }
+}
+
+.uiActivityActionAttach {
+    text-align: center;
+	padding: 10px 0px;
+
+	a {
+		font-size: 15px;
+		font-weight: bold;
+
+		.uiIconPlus {
+			font-size: 20px;
+			vertical-align: top;
+		}
+	}
+}
+
+.uiUserActivityStreamPortlet {
+	.uiPopup {
+		z-index: 100;
+	}
+}
+.noActivity {
+    margin: 15px 0;
+}
+
+.activityTimeLine [class^="uiIcon"] {
+    font-size: 12px;
+}
+
+.introBox {
+    .tooltip-inner {
+        white-space: normal;
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+	.uiComposer .blastContainer {
+		.share-buttons-down {
+			.btn-primary {
+				float: left;
+				margin-right: 10px;
+			}
+			.btn-cancel {
+				display: block;
+				visibility: visible;
+			}
+		}
+
+		.uiComposerLink {
+			.buttonLink, .inputLink {
+				display: block;
+				width: inherit;
+			}
+			.buttonLink {
+				padding-top: 0px;
+
+				.btn {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.uiComposer {
+		.share-buttons-top {
+			display: block;
+			visibility: visible;
+			float: right;
+		}
+		.blastContainer {
+			padding-top: 5px;
+			.share-buttons-down {
+				display: none;
+			}
+		}
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 1024px) {
+
+
+    .activityStream .arrowLeft {
+        display: none;
+    }
+    #DisplayModesDropDown .dropdown-menu {
+        left: auto;
+        right: 0;
+        min-width: 164px;
+    }
+}
+//end 1024
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    // Hide Column Timeline when show Right Sidebar
+
+    .tabletLDisplay {
+        .activityStream .boxContainer {
+            margin-left: 0;
+        }
+        .activityBottom,
+        .activityTimeLine {
+            display: none!important;
+        }
+        &:not(.hidden-right-bar){
+            .uiActivityStream, .uiActivitiesLoader,
+            .activityStream {
+                background: none;
+            }
+        }
+    }
+    .activityStreamStatus {
+        margin-right: 10px;
+        padding: 2px 9px;
+    }
+    .hidden-right-bar {
+        .activityStreamStatus {
+            float: left;
+            padding: 2px 18px;
+        }
+        .activityBottom,
+        .activityTimeLine {
+            display: block!important;;
+        }
+        .activityStream .boxContainer {
+            margin-left: 65px;
+        }
+    }
+    .open-right-bar {
+        .activityStreamStatus {
+            float: left;
+        }
+        .activityStream .introBox:before, .activityStream .introBox:after {
+            display: none;
+        }
+        .activityStream .introBox {
+            margin: 0;
+            background: 0;
+            border-left: medium none;
+            .border-radius(0);
+            border-right: medium none;
+            .box-shadow(none);
+            margin: 0;
+        }
+    }
+    .hidden-right-bar {
+        .activityStream .introBox {
+            margin:0 -7px;
+            .box-shadow(0px 2px 4px  -1px rgba(13,13,13,0.27));
+            #gradient > .vertical-three-colors(@baseBackground, @baseBackground,94%, @primaryBackgroundLight);
+        }
+    }
+    .activityStreamStatus {
+        .arrowBottom {
+            display: none;
+        }
+    }
+    .hidden-right-bar .activityStreamStatus {
+        //margin: 0 0 0 6px;
+        // float: left;
+        .arrowBottom {
+            display: block;
+            left: 16px;
+        }
+
+    }
+}
+//end 768 and 1024
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .activityStream .author span {
+        font-size: 16px;
+    }
+    .btn-group.uiDropdownWithIcon .btn .uiIconMiniArrowDown {
+        margin: 0 0px 0 1px;
+    }
+
+  
+    .activityType [class^="uiIcon"] {
+        font-size: 14px;
+    }
+    .activityStream .exo-mentions .replaceTextArea {
+        min-height: 26px;
+    }
+    .activityStream .introBox .isPreviewable .mediaContent {
+        max-width: 50%;
+    }
+    .activityTop .uiDropdownWithIcon a.OptionItem {
+        padding: 12px 15px 12px 15px;
+    }
+    .uiMyConnections .uiTabNormal .nav-tabs > li > a {
+        padding: 10px 15px;
+    }
+    .uiUserActivitiesDisplay .composerHintCont .iconBorder .uiIconClose {
+        top: -3px;
+    }
+
+}
+
+// end 481 1024
+
+@media (max-width: 768px) {
+    .uiProfileUserSearch {
+        input {
+            display: block;
+            margin: 5px 0;
+            width: 100% !important;
+        }
+    }
+
+}
+@media (min-width: 481px ) and (max-width: 1024px) {
+    .activityStream .heading .actLink .uiIconTrash:before {
+        font-size: 10px;
+        position: relative;
+        top: -2px;
+    }
+}
+@media (max-width: 767px ) {
+
+	body {
+		height: 100%;
+	}
+	.activityDisplay {
+		.showMore {
+			display: none;
+		}
+	}
+	.activityTimeLine.pull-left {
+	    display: none;
+	}
+	.UISocialConfirmation {
+		min-height: 180px;
+		.contentMessage {
+			white-space: nowrap;
+		}
+	}
+	.footComment {
+		position: fixed;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        border-top: solid 1px @borderColor;
+        background-color: @primaryBackground;
+    .commmentLeft {
+    	display:none;
+    }
+    .commentRight {
+    	button {
+    	  margin: 0px 5px;
+    	}
+	    .commentInput {
+	      margin: 11px 100px 10px 10px;
+	      max-height: 300px;
+	      overflow-y: auto;
+	      width: 93%;
+	    }
+    }
+	}
+	.activityStreamStatus .arrowBottom {
+	  display: none;
+	}
+	.activityStream.block-activity .inputContainer {
+		.box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
+		border-top: solid 1px #ccc;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background-color: #f0f0f0;
+		padding: 0;
+		width: 100%;
+
+		> div {
+			padding: 10px;
+		}
+
+		.commmentLeft {
+			display: none;
+			&+ .commentRight{
+				margin-left: 0px;
+			}
+		}
+	}
+	.activityStream .arrowLeft {
+		display: none;
+	}
+	.activityStream .boxContainer {
+		margin: 0;
+	}
+	.uiActivityStream, .uiActivitiesLoader {
+	    background: none;
+	}
+	.activityStream {
+		background: none;
+	}
+	.activityBottom {
+		background: none;
+	}
+	.activityStream .contentBox {
+		padding-bottom: 0px;
+	}
+	.activityStream .contentBox .actionBar {
+		border-bottom: none;
+	}
+	.activityStream .contentBox .listLikedBox {
+        border: medium none;
+        //display: none;
+        padding: 0;
+	}
+	.activityStream .contentBox .commentBox {
+        border: medium none;
+        //display: none;
+	}
+	.activityStream.block-activity .contentBox .actionBar {
+		border-bottom: 1px solid @borderColor;
+	}
+	.activityStream.block-activity .contentBox {
+		padding-bottom: 15px;
+	}
+	.activityStream.block-activity .contentBox .listLikedBox {
+        display: block;
+        padding: 16px 0px 16px 16px;
+	}
+	.activityStream.block-activity .contentBox .commentBox {
+        border-top: 1px solid @borderColor;
+        display: block;
+	}
+    .uiActivitiesDisplay .pull-right  #DisplayModesDropDown{
+        margin-left: 10px;
+    }
+	.activityStreamStatus {
+		float: right;
+	    padding: 3px 5px;
+	}
+    .activityStream.block-activity .contentBox .actionBar {
+        border-bottom: none;
+    }
+	.uiUserActivityStreamPortlet {
+		.shareStt .dropdown-menu {
+			padding: 10px;
+			position: relative;
+			top: 0;
+			float: none;
+			&:before {
+			    border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+			    border-left: 7px solid transparent;
+			    border-right: 7px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 9px;
+			    position: absolute;
+			    top: -7px;
+			}
+			&:after {
+			    border-bottom: 6px solid #ffffff;
+			    border-left: 6px solid transparent;
+			    border-right: 6px solid transparent;
+			    content: "";
+			    display: inline-block;
+			    left: 10px;
+			    position: absolute;
+			    top: -6px;
+			}
+			textarea {
+				border-radius: 0;
+				resize: none;
+				width: 100%;
+			}
+		}
+	}	
+	
+	/* comment page*/
+	.uiCommentBox {
+	    background: none repeat scroll 0 0 #f8f8f8;
+	    border: 1px solid #ccc;
+	    padding: 0;
+	    .highlightBox {
+		    background: none repeat scroll 0 0 #fff;
+		    padding: 10px 10px 20px;
+		    .profile .rightBlock {
+			    margin-left: 60px;
+			    a {
+				    font-weight: bold;
+				}
+				p.dateTime {
+				    color: #999;
+				    font-size: 11px;
+				}
+				.descript {
+				    margin-bottom: 0;
+				    overflow: hidden;
+				    padding: 10px 0;
+				}
+			}
+		}
+	}
+	.uiCommentBox .actionBar {
+	    border-top: 1px solid #ccc;
+	    padding: 5px 0;
+	    ul > li {
+		    display: inline-block;
+		    margin: 0 5px;
+		    a {
+			    color: #333;
+			    &:hover {
+				    color: #2f5e92;
+				}
+			}
+		}
+	}
+	.uiCommentBox .commentList {
+	    background: none repeat scroll 0 0 #fff;
+	    max-height: 485px;
+	    overflow: auto;
+	    padding: 8px 0;
+	    li {
+		    padding: 8px 10px;
+		    .close {
+			    //display: none;
+			    position: absolute;
+			    right: -19px;
+			    top: 3px;
+			}
+			&:hover .close {
+			    display: block;
+			}
+		}
+		.avatarXSmall {
+		    margin-top: 5px;
+		}
+		.rightBlock {
+		    margin-left: 45px;
+		    margin-right: 15px;
+		    position: relative;
+		    .tit {
+		    	 a {
+				    color: #2f5e92;
+				    font-weight: bold;
+				}
+				.dateTime {
+				    color: #999;
+				    font-size: 11px;
+				}
+			}
+			.cont {
+			    margin: 0;
+			    word-wrap: break-word;
+			}
+		}
+	}
+	.uiCommentBox .noComment {
+	    background: none repeat scroll 0 0 #fff;
+	    margin: 0 auto;
+	    padding: 0 0 20px;
+	    text-align: center;
+		.info {
+		    background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+		    color: #999;
+		    font-size: 14px;
+		    padding: 80px 0 0;
+		}
+		.error {
+		    background: url("/eXoSkin/skin/images/system/no_comment.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+		    color: @errorColor;
+		    font-size: 14px;
+		    padding: 80px 0 0;
+		}		
+	}
+	.uiCommentBox .commentInputBox {
+	    border-bottom: 1px solid #ccc;
+	    border-top: 1px solid #ccc;
+	    margin: 0;
+	    padding: 20px 10px;
+		textarea {
+		    height: 28px;
+		    margin: 4px 0 4px 9px;
+		    resize: none;
+		    width: 210px;
+		}
+	}
+    .activityStream .introBox {
+        margin: 0;
+        background: 0;
+        border-left: medium none;
+        .border-radius(0);
+        border-right: medium none;
+        .box-shadow(none);
+        margin: 0;
+    }
+    .open-right-bar .activityStreamStatus {
+        float: right;
+    }
+    .activityStream .introBox:before, .activityStream .introBox:after {
+        display: none;
+    }
+    .uiActivityStream {
+        padding-top: 10px; 
+    }
+    .uiActivityStream.clearBG, .uiActivitiesLoader.clearBG {
+        padding-top:10px;
+    }
+    .uiActivitiesDisplay {
+        .iconReturn {
+            font-size: 20px;
+            color: @colorIconDefault;
+            &:before {content: "\e74f";}
+        }
+    }
+    .exo-mentions .replaceTextArea {
+        min-height: 20px;
+    }
+    .uiUserActivitiesDisplay .composerHintCont {
+        margin: 20px 0;
+        .arrowLeft {
+            display: none;
+        }
+    }
+    .activityStream .introBox .isPreviewable .mediaContent {
+        max-width: 30%;
+        float: left;
+        margin-right: 10px;
+        max-width: 30%;
+    }
+    //| S_AS_05 | P1 |
+    .activityStream .pull-left.statusAction {
+        a {
+            font-size: 0;
+        }
+    }
+	.introBox {
+		embed,object,iframe,video {
+			max-width: 100%;
+		}
+	}
+
+    .fileActivity .introBox .isPreviewable  {
+        .pull-left {
+            float: none;
+            & + .text {
+                overflow: visible;
+            }
+        }
+        .mediaContent {
+            max-width: 100%;
+            margin: 0 0 10px;
+        }
+        .PlayerContianer,.PlayerContent {
+            width: 100%;
+        }
+    }
+}
+// end 767
+
+
+
+@media (max-width: 480px) {
+	.activityStream .introBox .pull-left {
+		display: block;
+		float: none;
+		margin: 0 0 10px 0 !important;
+	}
+    .fileActivity .introBox .isPreviewable .PlayerContent,
+    .fileActivity .introBox .isPreviewable .PlayerContianer {
+        width: auto;
+    }
+    .exo-mentions .replaceTextArea {
+        min-height: 18px;
+    }
+    .footComment {
+        .exo-mentions .replaceTextArea {
+            min-height: 18px;
+        }
+    }
+    .fileActivity .introBox .isPreviewable .fileTypeContent + .text {
+        overflow: visible;
+    }
+    .uiCalendarActivity .introBox .clearfix .calendarBox + .text,
+    .uiCalendarActivity .introBox .clearfix .statusTask + .text {
+        margin-left: 0; overflow: visible;
+    }
+    .uiUserActivitiesDisplay {
+		.uiDropdownWithIcon{
+			.btn{
+				padding: 1px 6px 3px 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+//
+// Notification
+// --------------------------------------------------
+.uiPopup, .UIMaskWorkspace {
+	.alert{
+		position: relative;
+		left: 50%;
+		.translate(-50%, 0);
+		display: inline-block;
+	}
+}
+
+.UISocialConfirmation{
+	top:100%;
+	left:50%;
+	margin-left:-200px;
+	margin-top:-200px;
+}
+
+.alert {
+	.border-radius(@baseBorderRadius);
+	.box-shadow(0px 1px 1px @primaryBackgroundHover);
+	background: @warningBackground;
+	border-color: @warningBorder;
+	color: @warningText;
+	padding: 8px 12px 8px 32px;
+	margin: 10px 0;
+	z-index: 10;
+	max-width: 95%;
+	word-wrap: break-word;
+	i {
+		display: inline;
+		vertical-align: text-top;
+		.square(16px);
+		margin:0 7px 0 0;
+	}
+
+	.uiIconWarning {
+		&:before {
+            color: @warningColor;
+        }
+	}
+
+	a:not(.btn) {
+		color: @linkColor;
+
+		&:hover {
+			font-weight: normal;
+			text-decoration: none;
+		}
+	}
+}
+
+.alert-success {
+	background: @successBackground;
+	border-color: @successBorder;
+	color: @successText;
+
+	.uiIconSuccess {
+        &:before {
+            content: "\e770";//uiIconValidate
+            color: @successColor;
+        }
+
+	}
+}
+
+.alert-info {
+	background: @infoBackground;
+	border-color: @infoBorder;
+	color: @infoText;
+
+	.uiIconInfo {
+        &:before {
+            color: @infoColor;
+            content: "\e767";
+        }
+
+	}
+}
+
+.alert-error {
+	background: @errorBackground;
+	border-color: @errorBorder;
+	color: @errorText;
+
+	.uiIconError {
+        &:before {
+            content: "\e76d";//uiIconClose
+            color: @errorColor;
+        }
+
+	}
+}

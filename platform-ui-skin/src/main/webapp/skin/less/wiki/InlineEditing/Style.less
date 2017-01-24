@@ -1,0 +1,28 @@
+.EditSection [class^="wikimodel-freestanding"]{
+  background-position: -40px 0px;
+    &:before {
+        content: "\e791";
+    }
+    margin-top: 12px;
+    .font-icon();
+  &:hover {
+      color: @colorIconPrimary;
+  }
+}
+
+.uiWikiPageContentArea{
+	span.EditSection{
+		display: none;
+	}
+	.section-container .EditSectionHover{
+		background-color: @primaryBackgroundLight;
+	    margin: 0 -15px;
+    	padding-left: 15px;
+    	padding-right: 15px;
+	}
+	.section-container{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+}
+
